@@ -1,0 +1,104 @@
+.markdownElement {
+  --padding: 1rem;
+  --md-bg: var(--theme-elevation-50);
+
+  :global(.code-editor) {
+    border: none;
+    padding-left: var(--padding);
+    background-color: var(--md-bg);
+    
+    :global(.monaco-editor) {
+      border: none;
+
+      :global(.margin),
+      :global(.monaco-editor-background) {
+        background-color: var(--md-bg);
+      }
+    }
+
+    :global(.monaco-scrollable-element.editor-scrollable) {
+      min-width: 100%;
+      left: 0 !important;
+    }
+
+    :global(.decorationsOverviewRuler ) {
+      display: none !important;
+    }
+    
+    :global(.view-overlays .current-line) {
+      border: none;
+    }
+  }
+
+  .header {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-family: var(--font-body);
+    background-color: var(--md-bg);
+    border-bottom: 1px solid var(--theme-elevation-100);
+    display: flex;
+    justify-content: space-between;
+    
+    .headerText {
+      margin: 0;
+      padding: var(--padding);
+    }
+
+    .rightSection {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .removeButton {
+      margin: 0;
+      margin-right: var(--padding);
+    }
+
+    .tabs {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1rem;
+
+      button {
+        height: 100%;
+        cursor: pointer;
+        background-color: transparent;
+        border: unset;
+        position: relative;
+        font-weight: bold;
+        padding: var(--padding) 0;
+        opacity: .5;
+
+        &.active {
+          opacity: 1;
+
+          &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: var(--theme-text);
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .customEditor {
+    padding-top: 10px;
+    background-color: var(--md-bg);
+  }
+}
+
+.viewerContainer {
+  overflow: auto;
+  background-color: var(--md-bg);
+  padding: var(--padding);
+  white-space: initial;
+}
