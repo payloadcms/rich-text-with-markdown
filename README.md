@@ -1,19 +1,12 @@
-# example-cms
+# Payload Rich Text Markdown Element 
 
-This project was created using create-payload-app using the blank template.
+This repository contains an example of how to build a Markdown element into Payload's Rich Text editor.
 
-## How to Use
+## Spin up locally
 
-`yarn dev` will start up your application and reload on any changes.
+To work with this repo locally, follow the steps below:
 
-### Docker
-
-If you have docker and docker-compose installed, you can run `docker-compose up`
-
-To build the docker image, run `docker build -t my-tag .`
-
-Ensure you are passing all needed environment variables when starting up your container via `--env-file` or setting them with your deployment.
-
-The 3 typical env vars will be `MONGODB_URI`, `PAYLOAD_SECRET`, and `PAYLOAD_CONFIG_PATH`
-
-`docker run --env-file .env -p 3000:3000 my-tag`
+1. Make sure you have access to a MongoDB instance either locally or on Atlas
+2. Run `cp .env.example .env` to create an `.env` file in the root directory of your app
+3. Run `yarn` to install dependencies
+4. Run `yarn dev` to start up your application
