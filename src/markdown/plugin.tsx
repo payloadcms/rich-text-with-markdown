@@ -1,9 +1,7 @@
-import { elementIdentifier } from ".";
-
 export const withMarkdown = (editor) => {
   const { isVoid } = editor;
 
-  editor.isVoid = (element) => (element.type === elementIdentifier ? true : isVoid(element));
+  editor.isVoid = (element) => (element.type === 'markdown' ? true : isVoid(element));
 
   return editor;
 };

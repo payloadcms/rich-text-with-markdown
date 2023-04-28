@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { Transforms } from 'slate';
 import { ReactEditor, useSlateStatic } from 'slate-react';
-import { elementIdentifier } from '.';
 import { CodeEditor } from 'payload/dist/admin/components/elements/CodeEditor';
 import Button from 'payload/dist/admin/components/elements/Button'
 
 import classes from './index.module.scss';
 
 const Viewer = React.lazy(() => import('./Viewer'))
-
-const valueKey = 'markdownValue';
 
 type ElementProps = {
   attributes: React.HTMLAttributes<HTMLDivElement>
@@ -38,7 +35,7 @@ export const Element: React.FC<ElementProps> = (props) => {
 
       Transforms.setNodes(editor,
         {
-          type: elementIdentifier,
+          type: 'markdown',
           markdownValue: newValue,
           children: [
             { text: ' ' },

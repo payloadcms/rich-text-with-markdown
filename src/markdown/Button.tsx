@@ -3,12 +3,9 @@ import { ReactEditor, useSlate } from 'slate-react';
 import { ElementButton } from 'payload/components/rich-text'
 import { injectVoidElement } from 'payload/dist/admin/components/forms/field-types/RichText/elements/injectVoid';
 
-import { elementIdentifier } from '.';
-
-
 const insertMarkdown = (editor) => {
   const markdownElement = {
-    type: elementIdentifier,
+    type: 'markdown',
     children: [
       { text: '' },
     ],
@@ -54,7 +51,7 @@ export const Button: React.FC = () => {
   return (
     <ElementButton
       onClick={onClick}
-      format={elementIdentifier}
+      format='markdown'
     >
       <Icon />
     </ElementButton>
