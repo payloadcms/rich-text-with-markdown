@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Transforms } from 'slate';
-import { ReactEditor, useSlateStatic, useFocused, useSelected } from 'slate-react';
+import { ReactEditor, useSlateStatic } from 'slate-react';
 import { elementIdentifier } from '.';
 import { CodeEditor } from 'payload/dist/admin/components/elements/CodeEditor';
 import Button from 'payload/dist/admin/components/elements/Button'

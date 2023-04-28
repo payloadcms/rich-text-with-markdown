@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ReactEditor, useSlate } from 'slate-react';
-import RichTextButton from 'payload/dist/admin/components/forms/field-types/RichText/elements/Button'
+import { ElementButton } from 'payload/components/rich-text'
 import { injectVoidElement } from 'payload/dist/admin/components/forms/field-types/RichText/elements/injectVoid';
 
 import { elementIdentifier } from '.';
@@ -10,7 +10,7 @@ const insertMarkdown = (editor) => {
   const markdownElement = {
     type: elementIdentifier,
     children: [
-      { text: ' ' },
+      { text: '' },
     ],
   };
 
@@ -50,13 +50,13 @@ export const Button: React.FC = () => {
   const onClick = () => {
     insertMarkdown(editor);
   }
-  
+
   return (
-    <RichTextButton
+    <ElementButton
       onClick={onClick}
       format={elementIdentifier}
     >
       <Icon />
-    </RichTextButton>
+    </ElementButton>
   );
 }
