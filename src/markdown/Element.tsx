@@ -27,7 +27,7 @@ export const Element: React.FC<ElementProps> = (props) => {
     fieldProps,
   } = props;
 
-  const currentState = element?.[valueKey] || '';
+  const currentState = element?.markdownValue || '';
   const [markdownState, setMarkdownState] = React.useState<'editor' | 'viewer'>('editor');
 
   const editor = useSlateStatic()
@@ -39,7 +39,7 @@ export const Element: React.FC<ElementProps> = (props) => {
       Transforms.setNodes(editor,
         {
           type: elementIdentifier,
-          [valueKey]: newValue,
+          markdownValue: newValue,
           children: [
             { text: ' ' },
           ],
